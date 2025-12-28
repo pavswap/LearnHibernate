@@ -7,16 +7,13 @@ public class CRUDUtility {
 
     static SessionFactory fac;
 
-    SessionFactory getFactory() {
-
+    static {
         try {
             Configuration config = new Configuration()
                     .configure("hibernate.cfg.xml")
                     .addAnnotatedClass(Data.class);
 
             fac = config.buildSessionFactory();
-
-            return fac;
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -24,7 +21,11 @@ public class CRUDUtility {
         }
     }
 
-    void closeSessionFactory() {
+    static SessionFactory getSessionFactory() {
+        return fac;
+    }
+
+    static void closeSessionFactory() {
         fac.close();
     }
 }
