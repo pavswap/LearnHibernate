@@ -1,0 +1,1 @@
+A simple Mapping project where an entity Author has One to Many relationship with Book, and One to One relationship with Biopic entitiy.
