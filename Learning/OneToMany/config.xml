@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection -->
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc_localhost
+        </property>
+
+        <property name="hibernate.connection.username">
+            username
+        </property>
+
+        <property name="hibernate.connection.password">
+            userpassword
+        </property>
+
+        <!-- Dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+
+        <!-- Hibernate behavior -->
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+
+        <property name="hibernate.show_sql">
+            true
+        </property>
+
+        <property name="hibernate.format_sql">
+            true
+        </property>
+
+        <!-- Register entity classes -->
+        <mapping class="com.secondproj.Book"/>
+        <mapping class="com.secondproj.Author"/>
+        <mapping class="com.secondproj.Biopic"/>
+
+    </session-factory>
+</hibernate-configuration>
